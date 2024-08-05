@@ -1,0 +1,12 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextIndex", "prismaSchemaFolder"]
+}
+
+// fullTextIndex: https://github.com/prisma/prisma/releases/tag/3.6.0
+// prismaSchemaFolder: https://github.com/prisma/prisma/releases/tag/5.15.0
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}

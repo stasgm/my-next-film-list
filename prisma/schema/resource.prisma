@@ -1,0 +1,43 @@
+enum ResourceType {
+  FILM
+  SERIES
+}
+
+type Episode {
+  title  String
+  date   DateTime
+  rating Int
+}
+
+model Series {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  years Int[]
+
+  episodesTotalNumber Int
+  episodes            Episode[]
+}
+
+model Film {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  year Int
+}
+
+model Resource {
+  id     String       @id @default(auto()) @map("_id") @db.ObjectId
+  schema Int          @default(1)
+  title  String
+  url    String
+  genres String[]
+  type   ResourceType
+
+  rating     Int
+  seen       Boolean @default(false)
+  resourceId String  @db.ObjectId
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  filmId    String   @db.ObjectId
+
+  @@unique([title, url])
+}

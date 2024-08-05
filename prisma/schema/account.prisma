@@ -1,0 +1,17 @@
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  schema Int    @default(1)
+  email  String
+  name   String
+  role   Role   @default(USER)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([email, name])
+}
