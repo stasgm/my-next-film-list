@@ -18,7 +18,6 @@ my-film-list/deploys)
 
 - pnpm dlx sort-package-json - sort dependencies in package.json
 
-
 ## Todo
 
 ### Back end

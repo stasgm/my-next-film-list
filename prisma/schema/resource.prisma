@@ -4,40 +4,50 @@ enum ResourceType {
 }
 
 type Episode {
-  title  String
-  date   DateTime
-  rating Int
+  title           String
+  number          Int
+  releaseDate     DateTime?
+  durationMinutes Int?
+  rating          Int
 }
 
-model Series {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  years Int[]
-
-  episodesTotalNumber Int
-  episodes            Episode[]
+model Season {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  number        Int
+  episodesTotal Int
+  episodes      Episode[]
+  Resource      Resource? @relation(fields: [resourceId], references: [id])
+  resourceId    String?   @db.ObjectId
 }
 
-model Film {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+// model Series {
+//   id            String   @id @default(auto()) @map("_id") @db.ObjectId
+//   releaseYears  Int[]
+//   seasonsTotal  Int
+//   episodesTotal Int
+//   seasons       Season[]
+// }
 
-  year Int
-}
+// model Film {
+//   id              String @id @default(auto()) @map("_id") @db.ObjectId
+//   releaseYear     Int?
+//   durationMinutes Int?
+// }
 
 model Resource {
-  id     String       @id @default(auto()) @map("_id") @db.ObjectId
-  schema Int          @default(1)
-  title  String
-  url    String
-  genres String[]
-  type   ResourceType
-
-  rating     Int
-  seen       Boolean @default(false)
-  resourceId String  @db.ObjectId
-
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  filmId    String   @db.ObjectId
+  schema    Int      @default(1)
+
+  title   String
+  url     String
+  genres  String[]
+  seasons Season[]
+  type    ResourceType
+  details Json?
+  rating  Int?
+  seen    Boolean      @default(false)
 
   @@unique([title, url])
 }
