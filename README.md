@@ -57,3 +57,4 @@ my-film-list/deploys)
 - [ ] add toast messages after successful\failed actions
 - [ ] add button to show filter (disabled by default)
 - [x] show the number of the filtered items after 'total film' title
+- [ ] add using something like this https://developer.themoviedb.org/v4/reference/intro/getting-started or

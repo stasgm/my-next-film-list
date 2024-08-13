@@ -8,6 +8,9 @@ const config = {
 	content: ["./src/**/*.{ts,tsx,mdx}"],
 	prefix: "",
 	theme: {
+		fontFamily: {
+			sans: `ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+		},
 		container: {
 			center: true,
 			padding: "2rem",
@@ -69,6 +72,9 @@ const config = {
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
+			},
+			screens: {
+				xs: "400px",
 			},
 		},
 	},

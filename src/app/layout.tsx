@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/app/globals.css";
-import { Nav } from "@/ui/nav/Nav";
 
-const inter = Inter({ subsets: ["latin"] });
+import "@/app/globals.css";
+
+import { Providers } from "@/app/providers";
+import Footer from "@/ui/components/footer";
+import Header from "@/ui/components/header";
+import SectionContainer from "@/ui/components/section-container";
 
 export const metadata: Metadata = {
 	title: "My-next-film-list",
-	description: "A list of myfilms",
+	description: "A list of my films",
 };
 
 export default function RootLayout({
@@ -17,9 +19,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
-				<Nav />
-				{children}
+			<head></head>
+			<body>
+				<Providers>
+					<div className="flex min-h-full flex-col">
+						<Header />
+						<SectionContainer>{children}</SectionContainer>
+						<Footer />
+					</div>
+				</Providers>
 			</body>
 		</html>
 	);
