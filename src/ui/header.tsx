@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 import NavBar from "@/ui/nav/nav-bar";
-import ThemeSwitch from "@/ui/components/theme-switch";
-import SearchButton from "@/ui/components/search-button";
+import ThemeSwitch from "@/ui/theme-switch";
+import SearchButton from "@/ui/search-button";
 import BurgerNav from "@/ui/nav/burger-nav";
-import Profile from "@/ui/components/profile";
+import Profile from "@/ui/profile";
 
 export default function Header() {
 	return (
-		<header className="border-b py-2 sm:py-2">
+		<header className="py-2 border-b-gray-300 dark:border-b-gray-700 border-b">
 			<div className="mx-auto flex max-w-7xl flex-col items-start sm:flex-row sm:flex-wrap sm:items-center md:flex-nowrap">
 				<div className="-mt-0.5 hidden h-6 whitespace-nowrap text-xl font-bold sm:block">
 					<Link href="/" aria-label={"My Film List"}>

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 
 import { Providers } from "@/app/providers";
-import Footer from "@/ui/components/footer";
-import Header from "@/ui/components/header";
-import SectionContainer from "@/ui/components/section-container";
+import Footer from "@/ui/footer";
+import Header from "@/ui/header";
+import SectionContainer from "@/ui/section-container";
 
 export const metadata: Metadata = {
 	title: "My-next-film-list",

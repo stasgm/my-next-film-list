@@ -42,13 +42,16 @@ export default function Table({ columns, dataRows, rowKey = "key", selected }: P
 					<tr
 						key={row[rowKey]}
 						className={cn(
-							'border-b even:bg-gray-50 hover:bg-gray-100 even:dark:bg-gray-800/50 dark:hover:bg-gray-700 bg-white dark:bg-gray-800'
+							"border-b bg-white even:bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 even:dark:bg-gray-800/50 dark:hover:bg-gray-700",
 						)}
 					>
 						{columns.map((col, index) => (
 							<td
 								key={col.key}
-								className={cn('py-2 text-sm text-gray-500 dark:text-gray-300 px-4', `${col.headClassName ?? ''}`)}
+								className={cn(
+									"px-4 py-2 text-sm text-gray-500 dark:text-gray-300",
+									`${col.headClassName ?? ""}`,
+								)}
 							>
 								{col.render?.(row[col.key], row, index) ?? row[col.key]}
 							</td>

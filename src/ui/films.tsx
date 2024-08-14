@@ -120,7 +120,7 @@ export default function FilmList() {
 			<span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
 				{filmsNumberText}
 			</span>
-			<div className="overflow-hidden rounded-md border border-slate-200 dark:border-slate-700">
+			<div className="overflow-hidden rounded-md border border-gray-200 dark:border-gray-800">
 				<Table columns={columns} dataRows={films} rowKey="id" />
 			</div>
 		</>
