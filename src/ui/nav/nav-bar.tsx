@@ -8,12 +8,12 @@ import { privatLinks, publicLinks } from "@/data/navigation";
 
 export default function NavBar() {
 	const pathname = usePathname();
-	const { user, isLoading } = useUser();
+	const { user } = useUser();
 
 	return (
 		<div className="flex items-center">
 			<nav className="no-scrollbar hidden max-w-40 items-center space-x-2 overflow-x-auto sm:flex sm:space-x-2 md:max-w-72 lg:max-w-96">
-				{(!isLoading && !user ? publicLinks : privatLinks).map((link) => (
+				{(!user ? publicLinks : privatLinks).map((link) => (
 					<NavItem link={link} currentPath={pathname} key={`nav-${link.text || "home"}`} />
 				))}
 			</nav>
