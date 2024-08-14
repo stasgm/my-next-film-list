@@ -76,16 +76,27 @@ export default function BurgerNav() {
 								ref={navRef}
 								className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-12 pt-2 text-left"
 							>
-								{(!isLoading && !user ? publicLinks : privatLinks).map((link) => (
-									<Link
+								{(!user ? publicLinks : privatLinks).map((link) => {
+									if (link.path.includes('/api/auth')) return (
+										<a
+											key={link.text}
+											href={link.path}
+											className="hover:text-primary-500 dark:hover:text-primary-400 mb-4 py-2 pr-4 text-2xl font-bold tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
+											onClick={onToggleNav}
+										>
+											{link.text}
+										</a>
+									)
+
+									return (<Link
 										key={link.text}
 										href={link.path}
 										className="hover:text-primary-500 dark:hover:text-primary-400 mb-4 py-2 pr-4 text-2xl font-bold tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
 										onClick={onToggleNav}
 									>
 										{link.text}
-									</Link>
-								))}
+									</Link>)
+								})}
 							</nav>
 							<button
 								className="z-80 hover:text-primary-500 dark:hover:text-primary-400 fixed right-4 top-7 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
