@@ -51,7 +51,7 @@ export default function BurgerNav() {
 				<Dialog as="div" onClose={onToggleNav} unmount={false}>
 					<TransitionChild
 						as={Fragment}
-						enter="ease-out duration-300"
+						enter="ease-out duration-500"
 						enterFrom="opacity-0"
 						enterTo="opacity-100"
 						leave="ease-in duration-200"
@@ -59,7 +59,7 @@ export default function BurgerNav() {
 						leaveTo="opacity-0"
 						unmount={false}
 					>
-						<div className="z-60 fixed inset-0 bg-black/25" />
+						<div className="z-60 fixed inset-0 bg-black/50" />
 					</TransitionChild>
 					<TransitionChild
 						as={Fragment}
@@ -87,7 +87,6 @@ export default function BurgerNav() {
 									</Link>
 								))}
 							</nav>
-
 							<button
 								className="z-80 hover:text-primary-500 dark:hover:text-primary-400 fixed right-4 top-7 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
 								aria-label="Toggle Menu"
