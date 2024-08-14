@@ -9,6 +9,21 @@ export default function NavItem({
 	link: { path: string; text: string };
 	currentPath?: string;
 }) {
+	if (link.path.includes('/api/auth')) return (
+		<a
+			key={link.path}
+			className={cn(
+				"rounded-lg px-4 py-2 text-sm font-medium",
+				"hover:text-primary-500 dark:hover:text-primary-400",
+				"hover:bg-slate-200 dark:hover:bg-slate-800",
+				`${currentPath === link.path ? "bg-slate-100 dark:bg-slate-900" : ""}`,
+			)}
+			href={link.path}
+		>
+			{link.text}
+		</a>
+	)
+
 	return (
 		<Link
 			key={link.path}
