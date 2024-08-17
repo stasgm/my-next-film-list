@@ -9,7 +9,7 @@ import { Fragment, useState, useEffect, useRef } from "react";
 import { privatLinks, publicLinks } from "@/data/navigation";
 
 export default function BurgerNav() {
-	const { user, isLoading } = useUser();
+	const { user } = useUser();
 	const [navShow, setNavShow] = useState(false);
 	const navRef = useRef<HTMLInputElement>(null);
 
