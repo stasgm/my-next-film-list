@@ -8,9 +8,9 @@ import Profile from "@/ui/profile";
 
 export default function Header() {
 	return (
-		<header className="py-2 border-b-gray-300 dark:border-b-gray-700 border-b">
-			<div className="flex flex-row mx-auto max-w-7xl items-center px-2 sm:px-0">
-				<div className="text-xl font-bold block">
+		<header className="border-b border-b-gray-300 py-2 dark:border-b-gray-700">
+			<div className="mx-auto flex max-w-7xl flex-row items-center px-2 sm:px-0">
+				<div className="block text-xl font-bold">
 					<Link href="/" aria-label={"My Film List"}>
 						My Film List
 					</Link>
@@ -19,7 +19,7 @@ export default function Header() {
 				<div className="sm:ml-auto">
 					<NavBar />
 				</div>
-				<div className="flex items-center ml-auto sm:ml-0 space-x-2 self-end leading-5 sm:self-auto">
+				<div className="ml-auto flex items-center space-x-2 self-end leading-5 sm:ml-0 sm:self-auto">
 					<SearchButton />
 					<ThemeSwitch />
 					<BurgerNav />
