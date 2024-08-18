@@ -2,19 +2,22 @@
   "name": "my-next-film-list",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "prisma generate && next build",
+    "db:push": "prisma db push",
     "dev": "next dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "prisma generate",
-    "lint-staged": "pnpm dlx lint-staged",
-    "db:push": "prisma db push",
-    "prisma:studio": "prisma studio --browser none",
-    "prisma:generate": "prisma generate",
     "lint": "next lint",
+    "lint-staged": "pnpm dlx lint-staged",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio --browser none",
+    "seed:local": "dotenv -e .env.local ts-node prisma/seed.ts",
     "start": "next start",
     "typecheck": "tsc --noEmit"
+  },
+  "resolutions": {
+    "@typescript-eslint/typescript-estree": "^8.1.0"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
@@ -38,38 +41,36 @@
     "prisma": "^5.18.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7",
+    "react-hook-form": "^7.52.2",
     "swr": "^2.2.5",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.5.2",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-radix": "^3.0.3",
+    "tailwindcss-radix": "^3.0.4",
     "zod": "^3.23.8",
     "zod-error": "^1.5.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/body-scroll-lock": "^3.1.2",
-    "@types/node": "^20",
+    "@types/node": "^20.15.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "postcss": "^8",
+    "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.0.0",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.9",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.9"
+    "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@9.7.0",
   "engines": {
     "node": "^20.0.0",
     "pnpm": "^9.0.0"
-  },
-  "resolutions": {
-    "@typescript-eslint/typescript-estree": "^8.1.0"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

@@ -1,7 +1,7 @@
-import { useMemo } from "react";
 import { Resource, ResourceType } from "@prisma/client";
 import { FilmIcon, TvIcon as SerialIcon } from "@heroicons/react/24/outline";
 
+import prisma from '@/lib/prisma';
 import Table from "@/ui/table";
 
 const films: Resource[] = [
@@ -89,11 +89,12 @@ const Title = (value: string, row: Resource) => {
 	);
 };
 
-export default function FilmList() {
-	const filmsNumberText = useMemo(() => {
-		return `${films.length} records in the base`;
-	}, []);
+async function fetchResources() {
+	const resources = await prisma.resource.findMany();
+	return resources;
+}
 
+export default async function FilmList() {
 	const columns = [
 		{
 			headClassName: "sm:w-2/6 w-5/6",
@@ -115,13 +116,15 @@ export default function FilmList() {
 		},
 	];
 
+	const resources = await fetchResources();
+
 	return (
 		<>
 			<span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-				{filmsNumberText}
+				{`${resources.length} records in the base`}
 			</span>
 			<div className="overflow-hidden rounded-md border border-gray-200 dark:border-gray-800">
-				<Table columns={columns} dataRows={films} rowKey="id" />
+				<Table columns={columns} dataRows={resources} rowKey="id" />
 			</div>
 		</>
 	);

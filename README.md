@@ -17,6 +17,7 @@ my-film-list/deploys)
 ### Usefull commands
 
 - pnpm dlx sort-package-json - sort dependencies in package.json
+- pnpm update --interactive
 
 ## Todo
 

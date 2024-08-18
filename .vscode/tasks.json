@@ -1,49 +1,57 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "🚀 dev",
-      "type": "shell",
-      "command": "pnpm",
-      "args": ["dev"],
-      "options": {
-        "cwd": "${workspaceFolder}",
-        "env": {
-          "NODE_ENV": "dev"
-        }
-      }
-    },
-    {
-      "label": "🧶 lint",
-      "command": "pnpm",
-      "args": ["lint"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-    {
-      "label": "✨ Format",
-      "command": "pnpm",
-      "args": ["format"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-    {
-      "label": "✅ Typecheck",
-      "command": "pnpm",
-      "args": ["typecheck"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-    {
-      "label": "🗃️ prisma:generate",
-      "command": "pnpm",
-      "args": ["run", "prisma:generate"],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "🚀 dev",
+			"type": "shell",
+			"command": "pnpm",
+			"args": ["dev"],
+			"options": {
+				"cwd": "${workspaceFolder}",
+				"env": {
+					"NODE_ENV": "dev"
+				}
+			}
+		},
+		{
+			"label": "🧶 lint",
+			"command": "pnpm",
+			"args": ["lint"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "✨ Format",
+			"command": "pnpm",
+			"args": ["format"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "✅ Typecheck",
+			"command": "pnpm",
+			"args": ["typecheck"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "🗃️ prisma:generate",
+			"command": "pnpm",
+			"args": ["run", "prisma:generate"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},
+		{
+			"label": "🗃️ prisma:seed-local",
+			"command": "pnpm",
+			"args": ["run", "seed:local"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		}
+	]
 }
