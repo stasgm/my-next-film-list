@@ -1,14 +1,9 @@
-// "use client";
-import { getSession } from '@auth0/nextjs-auth0';
-
-// import { useUser } from "@auth0/nextjs-auth0/client";
+import { getSession } from "@auth0/nextjs-auth0";
 
 import FilmList from "@/ui/films";
 
 export default async function Home() {
-	// const { user } = useUser();
-	const user = (await getSession())?.user;
-
+	const { user } = (await getSession()) ?? {};
 
 	return (
 		<section>

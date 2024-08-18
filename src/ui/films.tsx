@@ -1,7 +1,7 @@
 import { Resource, ResourceType } from "@prisma/client";
 import { FilmIcon, TvIcon as SerialIcon } from "@heroicons/react/24/outline";
 
-import prisma from '@/lib/prisma';
+import prisma from "@/lib/prisma";
 import Table from "@/ui/table";
 
 const films: Resource[] = [

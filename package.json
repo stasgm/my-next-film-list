@@ -2,6 +2,7 @@
   "name": "my-next-film-list",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "prisma generate && next build",
     "db:push": "prisma db push",
@@ -12,7 +13,7 @@
     "lint-staged": "pnpm dlx lint-staged",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio --browser none",
-    "seed:local": "dotenv -e .env.local ts-node prisma/seed.ts",
+    "seed:local": "dotenv -e .env.local prisma db seed",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
@@ -64,7 +65,7 @@
     "prettier-plugin-organize-imports": "^4.0.0",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@9.7.0",
@@ -73,6 +74,6 @@
     "pnpm": "^9.0.0"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts"
   }
 }
