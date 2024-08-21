@@ -30,6 +30,8 @@ const filmsData: Prisma.ResourceCreateInput[] = [
 			durationMinutes: 150,
 			releaseYear: 2000,
 		} as FilmDetails,
+		seen: true,
+		favourite: true,
 	},
 	{
 		title: "Mandalorian",
@@ -144,6 +146,7 @@ const filmsData: Prisma.ResourceCreateInput[] = [
 		updatedAt: new Date("2020-01-01"),
 		schema: 1,
 		details: null,
+		favourite: true,
 	},
 	{
 		title: "The Matrix",

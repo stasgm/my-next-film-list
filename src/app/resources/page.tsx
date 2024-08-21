@@ -1,21 +1,19 @@
-import prisma from "@/lib/prisma";
+import { getSession } from "@auth0/nextjs-auth0";
 
-async function fetchResources() {
-	const resources = await prisma.resource.findMany();
-	return resources;
-}
-
+import Resourcelist from "@/ui/resource-list";
 export default async function ResourcesPage() {
-	const resources = await fetchResources();
+	const { user } = (await getSession()) ?? {};
 
 	return (
-		<div>
-			<h1>Resources:</h1>
-			<ul>
-				{resources.map((resource) => (
-					<li key={resource.id}>{resource.title}</li>
-				))}
-			</ul>
-		</div>
+		<section>
+			{user && <Resourcelist />}
+			{!user && (
+				<div className="flex h-10 items-center justify-center">
+					<span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+						Log in to see your films list
+					</span>
+				</div>
+			)}
+		</section>
 	);
 }

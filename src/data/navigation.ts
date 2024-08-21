@@ -1,5 +1,6 @@
 export const privatLinks = [
 	{ path: "/", text: "Home" },
+	{ path: "/resources", text: "Resources" },
 	{ path: "/profile", text: "Profile" },
 	{ path: "/api/auth/logout", text: "Log out" },
 ];

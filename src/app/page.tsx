@@ -1,13 +1,13 @@
 import { getSession } from "@auth0/nextjs-auth0";
 
-import FilmList from "@/ui/films";
+import Resourcelist from "@/ui/resource-list";
 
 export default async function Home() {
-	const { user } = await getSession() ?? {};
+	const { user } = (await getSession()) ?? {};
 
 	return (
 		<section>
-			{user && <FilmList />}
+			{user && <Resourcelist favourite={true} />}
 			{!user && (
 				<div className="flex h-10 items-center justify-center">
 					<span className="text-sm font-semibold text-slate-800 dark:text-slate-200">

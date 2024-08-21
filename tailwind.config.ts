@@ -1,16 +1,15 @@
 import type { Config } from "tailwindcss";
-import FormsPlugin from "@tailwindcss/forms";
-import TypographyPlugin from "@tailwindcss/typography";
-import Animate from "tailwindcss-animate";
 
 const config = {
 	darkMode: ["class"],
-	content: ["./src/**/*.{ts,tsx,mdx}"],
+	content: [
+		"./pages/**/*.{ts,tsx}",
+		"./components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}",
+	],
 	prefix: "",
 	theme: {
-		fontFamily: {
-			sans: `ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
-		},
 		container: {
 			center: true,
 			padding: "2rem",
@@ -73,12 +72,9 @@ const config = {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
-			screens: {
-				xs: "400px",
-			},
 		},
 	},
-	plugins: [FormsPlugin, TypographyPlugin, Animate],
+	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
 export default config;
