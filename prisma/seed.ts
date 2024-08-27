@@ -24,7 +24,7 @@ const filmsData: Prisma.ResourceCreateInput[] = [
 		title: "Star Wars",
 		rating: 10,
 		type: "FILM",
-		url: "http://startwars.com",
+		url: "http://www.starwars.com",
 		genres: ["Sci-Fi", "Action", "Drama", "Fantasy", "Adventure"],
 		details: {
 			durationMinutes: 150,
@@ -37,6 +37,7 @@ const filmsData: Prisma.ResourceCreateInput[] = [
 		title: "Mandalorian",
 		rating: 4,
 		type: "SERIES",
+		tmdbId: 82856,
 		url: "http://mandalorian.com",
 		genres: ["Sci-Fi", "Action"],
 		details: {
@@ -123,6 +124,8 @@ const filmsData: Prisma.ResourceCreateInput[] = [
 		title: "Stranger Things",
 		rating: 9,
 		type: "SERIES",
+		tmdbId: 66732,
+		favourite: true,
 		url: "https://www.strangerthings.net",
 		genres: ["Sci-Fi", "Drama", "Mystery"],
 		seen: true,

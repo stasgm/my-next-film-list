@@ -4,6 +4,7 @@ import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { FilmIcon, TvIcon as SerialIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Resource } from "@prisma/client";
+import Link from "next/link";
 
 const columnHelper = createColumnHelper<Resource>();
 
@@ -19,14 +20,20 @@ export const shortColumns: ColumnDef<Resource, any>[] = [
 						<SerialIcon className="tv:h-6 tv:w-6 tv:mr-6 mr-2 inline h-5 w-5" />
 					)}
 				</span>
-				<span>{info.getValue()}</span>
+				<span>
+					<Link href={`/resources/${info.row.original.id}`}>{info.getValue()}</Link>
+				</span>
 			</span>
 		),
 	}),
-	{
-		accessorKey: "url",
-		header: "URL",
-	},
+	columnHelper.accessor("url", {
+		id: "url",
+		cell: (info) => (
+			<span className="inline-flex cursor-pointer items-center hover:underline">
+				<Link href={info.row.original.url}>{info.getValue()}</Link>
+			</span>
+		),
+	}),
 	columnHelper.accessor("seen", {
 		id: "seen",
 		cell: (info) => (

@@ -1,6 +1,7 @@
 import { getSession } from "@auth0/nextjs-auth0";
 
 import Resourcelist from "@/ui/resource-list";
+
 export default async function ResourcesPage() {
 	const { user } = (await getSession()) ?? {};
 
