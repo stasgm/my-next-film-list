@@ -1,5 +1,3 @@
-version: '3.8'
- 
 services:
   mongo:
     build:
@@ -10,9 +8,14 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_REPLICA_HOST: localhost
+      MONGO_REPLICA_PORT: 27017
+      MONGO_COMMAND: "mongosh"
     ports:
       - 27017:27017
-    command: --replSet rs0 --keyFile /etc/mongo-keyfile --bind_ip_all --port 27017
+    command: --replSet rs0 --keyFile /etc/mongo-keyfile --bind_ip_all
+    extra_hosts:
+      - "localhost:host-gateway"
     healthcheck:
       # test: echo "try { rs.status() } catch (err) { rs.initiate({_id:'rs0',members:[{_id:0,host:'host.docker.internal:27017'}]}) }" | mongosh --port 27017 -u root -p root --authenticationDatabase admin
       test: echo "try { rs.status() } catch (err) { rs.initiate({_id:'rs0',members:[{_id:0,host:'host.docker.internal:27017'}]}) }" | mongosh --port 27017 --quiet
@@ -23,6 +26,6 @@ services:
       retries: 10
     volumes:
       - data:/data/db
- 
+
 volumes:
   data: {}

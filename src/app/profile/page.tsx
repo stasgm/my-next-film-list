@@ -1,28 +1,28 @@
-"use client";
-
 import Image from "next/image";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { redirect } from "next/navigation";
+import { getSession } from "@auth0/nextjs-auth0";
 
-export default function Profile() {
-	const { user, error, isLoading } = useUser();
+export default async function Profile() {
+	const session = await getSession();
 
-	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>{error.message}</div>;
+	if (!session?.user) {
+		redirect("/");
+	}
+
+	const user = session.user;
 
 	return (
-		user && (
-			<div className="flex flex-row space-x-2">
-				<Image
-					src={user.picture ? user.picture : ""}
-					alt={user.name ?? "no-name"}
-					width={70}
-					height={70}
-				/>
-				<ul>
-					<li>Name: {user.name}</li>
-					<li>E-mail: {user.email}</li>
-				</ul>
-			</div>
-		)
+		<div className="flex flex-row space-x-2">
+			<Image
+				src={user.picture ? user.picture : ""}
+				alt={user.name ?? "no-name"}
+				width={70}
+				height={70}
+			/>
+			<ul>
+				<li>Name: {user.name}</li>
+				<li>E-mail: {user.email}</li>
+			</ul>
+		</div>
 	);
 }

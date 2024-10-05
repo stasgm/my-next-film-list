@@ -1,11 +1,11 @@
-import { ComponentProps } from "react"
-import Image from "next/image"
-import { PosterSize, tmdbImage } from "@/lib/tmdb/utils"
+import { ComponentProps } from "react";
+import Image from "next/image";
+import { PosterSize, tmdbImage } from "@/lib/tmdb/utils";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface MediaPosterProps extends ComponentProps<"div"> {
-	image?: string;
+	image?: string | null;
 	width?: number;
 	height?: number;
 	size?: PosterSize;
@@ -23,30 +23,25 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
 	priority,
 	...props
 }) => {
-	const src = image ? tmdbImage.poster(image, size) : null
+	const src = image ? tmdbImage.poster(image, size) : null;
 
 	if (!src) {
 		return (
 			<div
 				className={cn(
-					"size-full rounded-md border bg-muted text-muted-foreground",
-					className
+					"h-48 w-48 max-w-full rounded-md border bg-muted text-muted-foreground",
+					className,
 				)}
 				{...props}
 			>
-				<div className="grid size-full place-items-center" style={{ width, height }}>
-					No poster
-				</div>
+				<div className="grid size-full place-items-center">No poster</div>
 			</div>
-		)
+		);
 	}
 
 	return (
 		<Image
-			className={cn(
-				"rounded-md border bg-muted object-cover",
-				className
-			)}
+			className={cn("rounded-md border bg-muted object-cover", className)}
 			src={src}
 			alt={alt}
 			priority={priority}
@@ -54,5 +49,5 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
 			height={height}
 			unoptimized
 		/>
-	)
-}
+	);
+};

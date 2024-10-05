@@ -6,7 +6,7 @@ import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/re
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 import { Fragment, useState, useEffect, useRef } from "react";
 
-import { privatLinks, publicLinks } from "@/data/navigation";
+import { protectedLinks, publicLinks } from "@/data/navigation";
 
 export default function BurgerNav() {
 	const { user } = useUser();
@@ -76,7 +76,7 @@ export default function BurgerNav() {
 								ref={navRef}
 								className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-12 pt-2 text-left"
 							>
-								{(!user ? publicLinks : privatLinks).map((link) => {
+								{(!user ? publicLinks : protectedLinks).map((link) => {
 									if (link.path.includes("/api/auth"))
 										return (
 											<a

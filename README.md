@@ -2,22 +2,29 @@
 
 ## Deployment
 
-Web-client: [![Netlify Status](https://api.netlify.com/api/v1/badges/2e932c1f-419e-4904-8d67-b912d8594f78/deploy-status)](https://app.netlify.com/sites/
+Web-client: [![Netlify Status](https://api.netlify.com/api/v1/badges/2e932c1f-419e-4904-8d67-b912d8594f78/deploy-status)](<https://app.netlify.com/sites/>
 my-film-list/deploys)
 
 ## Local
 
-- setup mongodb [https://ginkcode.com/post/how-to-set-up-mongodb-with-replica-set-via-docker-compose]
+- setup mongodb
+  - [https://ginkcode.com/post/how-to-set-up-mongodb-with-replica-set-via-docker-compose]
+  - [https://haneenmahdin.medium.com/set-up-mongodb-prisma-with-docker-c8c2f28e85de]
+
+- copy .env.example to .env.local
+- update .env.local with your data
+- pnpm run seed:local
 
 ## DB commands
 
 - pnpm dlx prisma generate - If you make any changes later to the schema, you'll need to this command
-- pnpm prisma db seed - seed test data to db
+<!-- - pnpm prisma db seed - seed test data to db -->
 
 ### Usefull commands
 
 - pnpm dlx sort-package-json - sort dependencies in package.json
-- pnpm update --interactive
+- pnpm update --interactive - update dependencies
+- npx npm-check-updates -i - update dependencies another way
 
 ## Todo
 

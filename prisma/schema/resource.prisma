@@ -40,16 +40,19 @@ model Resource {
   updatedAt DateTime @updatedAt
   schema    Int      @default(1)
 
-  title     String
-  tmdbId    Int?
-  url       String
-  genres    String[]
-  seasons   Season[]
-  type      ResourceType
-  details   Json?
-  rating    Int?
-  seen      Boolean      @default(false)
-  favourite Boolean      @default(false)
+  title          String
+  tmdbId         Int?
+  tmdbUpdateDate DateTime?
+  url            String?
+  posterUrl      String?
+  backdropUrl    String?
+  genres         String[]
+  seasons        Season[]
+  type           ResourceType
+  details        Json?
+  rating         Int?
+  seen           Boolean      @default(false)
+  favourite      Boolean      @default(false)
 
   @@unique([title, url])
 }

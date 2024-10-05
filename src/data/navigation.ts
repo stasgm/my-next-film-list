@@ -1,4 +1,4 @@
-export const privatLinks = [
+export const protectedLinks = [
 	{ path: "/", text: "Home" },
 	{ path: "/resources", text: "Resources" },
 	{ path: "/profile", text: "Profile" },
