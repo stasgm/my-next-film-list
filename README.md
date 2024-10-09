@@ -1,30 +1,34 @@
 # My fillm list
 
-## Deployment
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7e4e1a3a-6ace-48b3-a37c-b686b59890d4/deploy-status)](https://app.netlify.com/sites/my-next-film-list/deploys)
 
-Web-client: [![Netlify Status](https://api.netlify.com/api/v1/badges/2e932c1f-419e-4904-8d67-b912d8594f78/deploy-status)](<https://app.netlify.com/sites/>
-my-film-list/deploys)
+## Local deployment
 
-## Local
+### 1. Setup mongodb in docker
 
-- setup mongodb
-  - [https://ginkcode.com/post/how-to-set-up-mongodb-with-replica-set-via-docker-compose]
-  - [https://haneenmahdin.medium.com/set-up-mongodb-prisma-with-docker-c8c2f28e85de]
+- copy `.env.example` to `.env.local` and update `.env.local` with your data
+- run ```pnpm run dev-local:docker``` to build and start mongodb in docker
 
-- copy .env.example to .env.local
-- update .env.local with your data
-- pnpm run seed:local
+#### Extra docs
+
+<https://haneenmahdin.medium.com/set-up-mongodb-prisma-with-docker-c8c2f28e85de>
+
+### 2. Setup prisma
+
+- run ```pnpm run seed:local``` to seed the db with test data
+- run ```pnpm run dev-local:prisma:studio``` to start prisma studio (if needed)
+
 
 ## DB commands
 
-- pnpm dlx prisma generate - If you make any changes later to the schema, you'll need to this command
+- ```pnpm dlx prisma generate``` - If you make any changes later to the schema, you'll need to this command
 <!-- - pnpm prisma db seed - seed test data to db -->
 
-### Usefull commands
+## Usefull commands
 
-- pnpm dlx sort-package-json - sort dependencies in package.json
-- pnpm update --interactive - update dependencies
-- npx npm-check-updates -i - update dependencies another way
+- ```pnpm dlx sort-package-json``` - sort dependencies in package.json
+- ```pnpm update --interactive``` - update dependencies
+- ```npx npm-check-updates -i``` - update dependencies, another tool
 
 ## Todo
 
