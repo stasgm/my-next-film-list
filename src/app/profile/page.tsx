@@ -18,6 +18,7 @@ export default async function Profile() {
 				alt={user.name ?? "no-name"}
 				width={70}
 				height={70}
+				priority={true}
 			/>
 			<ul>
 				<li>Name: {user.name}</li>

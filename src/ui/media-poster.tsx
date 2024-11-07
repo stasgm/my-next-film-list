@@ -20,7 +20,7 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
 	height = 200,
 	alt,
 	className,
-	priority,
+	priority = true,
 	...props
 }) => {
 	const src = image ? tmdbImage.poster(image, size) : null;

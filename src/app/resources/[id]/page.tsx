@@ -73,7 +73,8 @@ async function fetchResource(id: string): Promise<Resource | undefined> {
 	}
 }
 
-export default async function ResourcePage({ params }: { params: { id: string } }) {
+export default async function ResourcePage(props: { params: Promise<{ id: string }> }) {
+	const params = await props.params;
 	const resource = await fetchResource(params.id);
 
 	return (

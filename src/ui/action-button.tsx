@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ReactElement, SVGProps } from "react";
+import { ReactElement, SVGProps, type JSX } from "react";
 
 type ActionButtonProps = SVGProps<SVGSVGElement> & { children: ReactElement; active?: boolean };
 

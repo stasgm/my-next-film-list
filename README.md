@@ -7,7 +7,7 @@
 ### 1. Setup mongodb in docker
 
 - copy `.env.example` to `.env.local` and update `.env.local` with your data
-- run ```pnpm run dev-local:docker``` to build and start mongodb in docker
+- run `pnpm run dev-local:docker` to build and start mongodb in docker
 
 #### Extra docs
 
@@ -15,20 +15,19 @@
 
 ### 2. Setup prisma
 
-- run ```pnpm run seed:local``` to seed the db with test data
-- run ```pnpm run dev-local:prisma:studio``` to start prisma studio (if needed)
-
+- run `pnpm run seed:local` to seed the db with test data
+- run `pnpm run dev-local:prisma:studio` to start prisma studio (if needed)
 
 ## DB commands
 
-- ```pnpm dlx prisma generate``` - If you make any changes later to the schema, you'll need to this command
+- `pnpm dlx prisma generate` - If you make any changes later to the schema, you'll need to this command
 <!-- - pnpm prisma db seed - seed test data to db -->
 
 ## Usefull commands
 
-- ```pnpm dlx sort-package-json``` - sort dependencies in package.json
-- ```pnpm update --interactive``` - update dependencies
-- ```npx npm-check-updates -i``` - update dependencies, another tool
+- `pnpm dlx sort-package-json` - sort dependencies in package.json
+- `pnpm update --interactive` - update dependencies
+- `npx npm-check-updates -i` - update dependencies, another tool
 
 ## Todo
 
