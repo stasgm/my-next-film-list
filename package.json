@@ -44,7 +44,6 @@
 		"swr": "^2.3.2",
 		"tailwind-merge": "^3.0.1",
 		"tailwind-scrollbar-hide": "^2.0.0",
-		"tailwindcss-animate": "^1.0.7",
 		"tailwindcss-radix": "^4.0.1",
 		"zod": "^3.24.2",
 		"zod-error": "^1.5.0"
@@ -52,6 +51,7 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.2.0",
 		"@svgr/webpack": "^8.1.0",
+		"@tailwindcss/postcss": "^4.0.7",
 		"@types/body-scroll-lock": "^3.1.2",
 		"@types/eslint__eslintrc": "^2.1.2",
 		"@types/node": "^22.13.4",
@@ -83,5 +83,15 @@
 	},
 	"prisma": {
 		"seed": "tsx prisma/seed.ts"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@prisma/client",
+			"@prisma/engines",
+			"@sentry/cli",
+			"esbuild",
+			"prisma",
+			"sharp"
+		]
 	}
 }

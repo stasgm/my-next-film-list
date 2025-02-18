@@ -11,7 +11,9 @@ export default async function Home() {
 					<span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
 						Log in to see your films list
 					</span>
-				) : <FavouriteList />}
+				) : (
+					<FavouriteList />
+				)}
 			</div>
 		</section>
 	);

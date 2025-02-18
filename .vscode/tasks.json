@@ -48,7 +48,7 @@
 		{
 			"label": "🗃️ prisma:seed-local",
 			"command": "pnpm",
-			"args": ["run", "seed:local"],
+			"args": ["run", "dev-local:seed"],
 			"options": {
 				"cwd": "${workspaceFolder}"
 			}
