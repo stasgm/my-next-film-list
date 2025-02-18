@@ -51,7 +51,6 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.2.0",
 		"@svgr/webpack": "^8.1.0",
-		"@tailwindcss/postcss": "^4.0.7",
 		"@types/body-scroll-lock": "^3.1.2",
 		"@types/eslint__eslintrc": "^2.1.2",
 		"@types/node": "^22.13.4",
@@ -72,8 +71,8 @@
 	},
 	"overrides": {
 		"@tanstack/react-virtual": {
-			"react": "19.0.0",
-			"react-dom": "19.0.0"
+			"react": "18.0.0",
+			"react-dom": "18.0.0"
 		}
 	},
 	"packageManager": "pnpm@10.4.1",
