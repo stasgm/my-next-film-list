@@ -1,6 +1,6 @@
 "use client";
 
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useUser } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
@@ -59,7 +59,7 @@ export default function BurgerNav() {
 						leaveTo="opacity-0"
 						unmount={false}
 					>
-						<div className="z-60 fixed inset-0 bg-black/50" />
+						<div className="fixed inset-0 z-60 bg-black/50" />
 					</TransitionChild>
 					<TransitionChild
 						as={Fragment}
@@ -71,13 +71,13 @@ export default function BurgerNav() {
 						leaveTo="translate-x-full opacity-0"
 						unmount={false}
 					>
-						<DialogPanel className="z-70 fixed left-0 top-0 h-full w-full bg-white opacity-95 duration-300 dark:bg-gray-950 dark:opacity-[0.98]">
+						<DialogPanel className="fixed top-0 left-0 z-70 h-full w-full bg-white opacity-95 duration-300 dark:bg-gray-950 dark:opacity-[0.98]">
 							<nav
 								ref={navRef}
-								className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-12 pt-2 text-left"
+								className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
 							>
 								{(!user ? publicLinks : protectedLinks).map((link) => {
-									if (link.path.includes("/api/auth"))
+									if (link.path.includes("/auth"))
 										return (
 											<a
 												key={link.text}
@@ -93,7 +93,7 @@ export default function BurgerNav() {
 										<Link
 											key={link.text}
 											href={link.path}
-											className="hover:text-primary-500 dark:hover:text-primary-400 mb-4 py-2 pr-4 text-2xl font-bold tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
+											className="hover:text-primary-500 dark:hover:text-primary-400 font bold mb-4 py-2 pr-4 text-2xl tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
 											onClick={onToggleNav}
 										>
 											{link.text}
@@ -102,7 +102,7 @@ export default function BurgerNav() {
 								})}
 							</nav>
 							<button
-								className="z-80 hover:text-primary-500 dark:hover:text-primary-400 fixed right-4 top-7 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
+								className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-7 right-4 z-80 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
 								aria-label="Toggle Menu"
 								onClick={onToggleNav}
 							>

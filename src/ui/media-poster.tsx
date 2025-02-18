@@ -29,7 +29,7 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
 		return (
 			<div
 				className={cn(
-					"h-48 w-48 max-w-full rounded-md border bg-muted text-muted-foreground",
+					"bg-muted text-muted-foreground h-48 w-48 max-w-full rounded-md border",
 					className,
 				)}
 				{...props}
@@ -41,7 +41,7 @@ export const MediaPoster: React.FC<MediaPosterProps> = ({
 
 	return (
 		<Image
-			className={cn("rounded-md border bg-muted object-cover", className)}
+			className={cn("bg-muted rounded-md border object-cover", className)}
 			src={src}
 			alt={alt}
 			priority={priority}

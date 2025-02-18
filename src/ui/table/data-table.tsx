@@ -26,7 +26,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
 								return (
 									<TableHead
 										key={header.id}
-										className="text-xs font-medium uppercase tracking-wider text-slate-700 dark:text-slate-300"
+										className="text-xs font-medium tracking-wider text-slate-700 uppercase dark:text-slate-300"
 									>
 										{header.isPlaceholder
 											? null

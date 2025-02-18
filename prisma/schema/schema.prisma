@@ -1,6 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["fullTextIndex", "prismaSchemaFolder"]
+  previewFeatures = ["prismaSchemaFolder"]
 }
 
 // fullTextIndex: https://github.com/prisma/prisma/releases/tag/3.6.0
