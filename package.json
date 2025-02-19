@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"build-next": "next build",
 		"build": "prisma generate && next build",
 		"db:push": "prisma db push",
 		"dev": "next dev --turbopack",
@@ -51,11 +52,13 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.2.0",
 		"@svgr/webpack": "^8.1.0",
+		"@tailwindcss/postcss": "^4.0.7",
 		"@types/body-scroll-lock": "^3.1.2",
 		"@types/eslint__eslintrc": "^2.1.2",
 		"@types/node": "^22.13.4",
 		"@types/react": "19.0.10",
 		"@types/react-dom": "19.0.4",
+		"@typescript-eslint/eslint-plugin": "^8.24.1",
 		"@typescript-eslint/parser": "^8.24.1",
 		"dotenv-cli": "^8.0.0",
 		"eslint": "^9.20.1",
@@ -70,9 +73,11 @@
 		"typescript": "^5.6.2"
 	},
 	"overrides": {
-		"@tanstack/react-virtual": {
-			"react": "18.0.0",
-			"react-dom": "18.0.0"
+		"@headlessui/react": {
+			"@tanstack/react-virtual": {
+				"react": "19.0.0",
+				"react-dom": "19.0.0"
+			}
 		}
 	},
 	"packageManager": "pnpm@10.4.1",

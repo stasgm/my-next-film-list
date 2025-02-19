@@ -9,6 +9,7 @@ const compat = new FlatCompat({
 	baseDirectory: __dirname,
 });
 
+/** @type {import("eslint").Linter.Config} */
 const eslintConfig = [
 	...compat.extends("next/core-web-vitals", "next/typescript"),
 	{
@@ -24,6 +25,14 @@ const eslintConfig = [
 					destructuredArrayIgnorePattern: "^_",
 					varsIgnorePattern: "^_",
 					ignoreRestSiblings: true,
+				},
+			],
+			"@typescript-eslint/no-unused-expressions": [
+				"error",
+				{
+					allowShortCircuit: true,
+					allowTernary: true,
+					allowTaggedTemplates: true,
 				},
 			],
 		},
