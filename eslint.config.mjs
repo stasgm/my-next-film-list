@@ -14,6 +14,7 @@ const eslintConfig = [
 	...compat.extends("next/core-web-vitals", "next/typescript"),
 	{
 		rules: {
+			"no-unused-expressions": "off",
 			"@typescript-eslint/no-explicit-any": ["warn", { ignoreRestArgs: true }],
 			"@typescript-eslint/no-unused-vars": [
 				"warn",
