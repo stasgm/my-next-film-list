@@ -11,16 +11,25 @@ services:
     container_name: mongodb-replicaset
     environment:
       MONGO_REPLICA_HOST: 127.0.0.1
-      MONGO_REPLICA_PORT: 27017
+      MONGO_REPLICA_PORT: ${MONGO_PORT}
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
       MONGO_INITDB_DATABASE: ${MONGO_DB}
       MONGO_COMMAND: "mongosh"
     ports:
-      - "27017:27017"
+      - "${MONGO_PORT}:${MONGO_PORT}"
     # restart: unless-stopped
     healthcheck:
-      test: ["CMD", "mongosh", "admin", "--port", "27017", "--eval", "db.adminCommand('ping').ok"]
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "admin",
+          "--port",
+          "${MONGO_PORT}",
+          "--eval",
+          "db.adminCommand('ping').ok",
+        ]
       interval: 5s
       timeout: 2s
       retries: 20

@@ -17,7 +17,7 @@ const SearchIcon = () => (
 
 const SearchButton = () => {
 	return (
-		<button className="rounded-md px-2 py-2 font-medium hover:bg-slate-100 dark:hover:bg-slate-900">
+		<button className="rounded-md px-2 py-2 font-medium hover:cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-900">
 			<SearchIcon />
 		</button>
 	);
