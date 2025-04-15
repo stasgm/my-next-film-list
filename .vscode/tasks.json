@@ -7,10 +7,7 @@
 			"command": "pnpm",
 			"args": ["dev"],
 			"options": {
-				"cwd": "${workspaceFolder}",
-				"env": {
-					"NODE_ENV": "dev"
-				}
+				"cwd": "${workspaceFolder}"
 			}
 		},
 		{

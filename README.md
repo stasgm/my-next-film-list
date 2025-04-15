@@ -1,4 +1,4 @@
-# My fillm list
+# My film list
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7e4e1a3a-6ace-48b3-a37c-b686b59890d4/deploy-status)](https://app.netlify.com/sites/my-next-film-list/deploys)
 
@@ -6,8 +6,8 @@
 
 ### 1. Setup mongodb in docker
 
-- copy `.env.example` to `.env.local` and update `.env.local` with your data
-- run `pnpm run dev-local:docker` to build and start mongodb in docker
+- Copy `.env.example` to `.env.local` and update `.env.local` with your data (e.g., database credentials).
+- Run `pnpm run dev-local:docker` to build and start MongoDB in Docker.
 
 #### Extra docs
 
@@ -15,20 +15,20 @@
 
 ### 2. Setup prisma
 
-- run `pnpm run seed:local` to seed the db with test data
-- run `pnpm run dev-local:prisma:studio` to start prisma studio (if needed)
+- Run `pnpm run seed:local` to seed the database with test data.
+- Run `pnpm run dev-local:prisma:studio` to start Prisma Studio (if needed).
 
 ## DB commands
 
-- `pnpm dlx prisma generate` - If you make any changes later to the schema, you'll need to this command
-<!-- - pnpm prisma db seed - seed test data to db -->
+- `pnpm dlx prisma generate` - If you make any changes to the schema, run this command to regenerate Prisma client.
+- Uncomment and run `pnpm prisma db seed` if you need to seed test data into the database.
 
-## Usefull commands
+## Useful commands
 
-- `pnpm dlx sort-package-json` - sort dependencies in package.json
-- `pnpm update --interactive` - update dependencies
-- `npx npm-check-updates -i` - update dependencies, another tool
-- `pnpm dlx npm-check-updates -i` - update dependencies, another tool
+- `pnpm dlx sort-package-json` - Sort dependencies in `package.json`.
+- `pnpm update --interactive` - Update dependencies interactively.
+- `npx npm-check-updates -i` - Update dependencies using another tool.
+- `pnpm dlx npm-check-updates -i` - Update dependencies using another tool.
 
 ## Todo
 
